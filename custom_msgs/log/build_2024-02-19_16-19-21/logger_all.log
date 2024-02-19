@@ -1,0 +1,123 @@
+[0.817s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.818s] DEBUG:colcon:Parsed command line arguments: Namespace(ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffffbc94baf0>>, merge_install=False, metas=['./colcon.meta'], packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=8, paths=None, symlink_install=False, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffffbc94baf0>, verb_name='build', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0xffffbc5a3fa0>)
+[0.866s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.866s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.866s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.866s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.866s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.866s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.866s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/racecar/racecar_ws/src/lab1c/custom_msgs'
+[0.867s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.867s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.867s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.867s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.867s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.867s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.867s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.868s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.868s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.879s] DEBUG:colcon.colcon_core.package_identification:Package '.' with type 'ros.ament_cmake' and name 'custom_msgs'
+[0.879s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.879s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.879s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.879s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.879s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.950s] Level 5:colcon.colcon_core.verb:set package 'custom_msgs' build argument 'cmake_args' from command line to 'None'
+[0.950s] Level 5:colcon.colcon_core.verb:set package 'custom_msgs' build argument 'cmake_target' from command line to 'None'
+[0.950s] Level 5:colcon.colcon_core.verb:set package 'custom_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.950s] Level 5:colcon.colcon_core.verb:set package 'custom_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.950s] Level 5:colcon.colcon_core.verb:set package 'custom_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.951s] Level 5:colcon.colcon_core.verb:set package 'custom_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.951s] Level 5:colcon.colcon_core.verb:set package 'custom_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.951s] Level 5:colcon.colcon_core.verb:set package 'custom_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.951s] Level 5:colcon.colcon_core.verb:set package 'custom_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.951s] DEBUG:colcon.colcon_core.verb:Building package 'custom_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/racecar/racecar_ws/src/lab1c/custom_msgs/build/custom_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs', 'merge_install': False, 'path': '/home/racecar/racecar_ws/src/lab1c/custom_msgs', 'symlink_install': False, 'test_result_base': None}
+[0.964s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.977s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.977s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/racecar/racecar_ws/src/lab1c/custom_msgs' with build type 'ament_cmake'
+[0.978s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/racecar/racecar_ws/src/lab1c/custom_msgs'
+[0.992s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.993s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.993s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.007s] WARNING:colcon.colcon_core.prefix_path.colcon:The path '/home/racecar/racecar_ws/src/ros_exercises/install' in the environment variable COLCON_PREFIX_PATH doesn't exist
+[1.007s] WARNING:colcon.colcon_core.prefix_path.colcon:The path '/home/racecar/racecar_ws/src/ros_exercises/ros_exercises/install' in the environment variable COLCON_PREFIX_PATH doesn't exist
+[1.008s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/racecar/racecar_ws/src/ros_exercises/install/ros_exercises' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[1.008s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/racecar/racecar_ws/src/ros_exercises/install/ros_exercises' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[1.065s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/racecar/racecar_ws/src/lab1c/custom_msgs/build/custom_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /home/racecar/racecar_ws/src/lab1c/custom_msgs -DCMAKE_INSTALL_PREFIX=/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs
+[3.105s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/racecar/racecar_ws/src/lab1c/custom_msgs/build/custom_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /home/racecar/racecar_ws/src/lab1c/custom_msgs -DCMAKE_INSTALL_PREFIX=/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs
+[3.108s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/racecar/racecar_ws/src/lab1c/custom_msgs/build/custom_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/racecar/racecar_ws/src/lab1c/custom_msgs/build/custom_msgs -- -j8 -l8
+[4.981s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/racecar/racecar_ws/src/lab1c/custom_msgs/build/custom_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/racecar/racecar_ws/src/lab1c/custom_msgs/build/custom_msgs -- -j8 -l8
+[5.010s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/racecar/racecar_ws/src/lab1c/custom_msgs/build/custom_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/racecar/racecar_ws/src/lab1c/custom_msgs/build/custom_msgs
+[5.189s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(custom_msgs)
+[5.189s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/racecar/racecar_ws/src/lab1c/custom_msgs/build/custom_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/racecar/racecar_ws/src/lab1c/custom_msgs/build/custom_msgs
+[5.205s] Level 1:colcon.colcon_core.environment:checking '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs' for CMake module files
+[5.207s] Level 1:colcon.colcon_core.environment:checking '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs' for CMake config files
+[5.210s] Level 1:colcon.colcon_core.shell:create_environment_hook('custom_msgs', 'cmake_prefix_path')
+[5.230s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/hook/cmake_prefix_path.ps1'
+[5.231s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/hook/cmake_prefix_path.dsv'
+[5.232s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/hook/cmake_prefix_path.sh'
+[5.233s] Level 1:colcon.colcon_core.environment:checking '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/lib'
+[5.234s] Level 1:colcon.colcon_core.shell:create_environment_hook('custom_msgs', 'ld_library_path_lib')
+[5.247s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/hook/ld_library_path_lib.ps1'
+[5.248s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/hook/ld_library_path_lib.dsv'
+[5.249s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/hook/ld_library_path_lib.sh'
+[5.249s] Level 1:colcon.colcon_core.environment:checking '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/bin'
+[5.250s] Level 1:colcon.colcon_core.environment:checking '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/lib/pkgconfig/custom_msgs.pc'
+[5.250s] Level 1:colcon.colcon_core.environment:checking '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/lib/python3.8/site-packages'
+[5.250s] Level 1:colcon.colcon_core.shell:create_environment_hook('custom_msgs', 'pythonpath')
+[5.264s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/hook/pythonpath.ps1'
+[5.265s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/hook/pythonpath.dsv'
+[5.265s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/hook/pythonpath.sh'
+[5.266s] Level 1:colcon.colcon_core.environment:checking '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/bin'
+[5.280s] INFO:colcon.colcon_core.shell:Creating package script '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/package.ps1'
+[5.281s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/package.dsv'
+[5.282s] INFO:colcon.colcon_core.shell:Creating package script '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/package.sh'
+[5.282s] INFO:colcon.colcon_core.shell:Creating package script '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/package.bash'
+[5.283s] INFO:colcon.colcon_core.shell:Creating package script '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/package.zsh'
+[5.284s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/colcon-core/packages/custom_msgs)
+[5.322s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(custom_msgs)
+[5.335s] Level 1:colcon.colcon_core.environment:checking '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs' for CMake module files
+[5.338s] Level 1:colcon.colcon_core.environment:checking '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs' for CMake config files
+[5.341s] Level 1:colcon.colcon_core.shell:create_environment_hook('custom_msgs', 'cmake_prefix_path')
+[5.354s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/hook/cmake_prefix_path.ps1'
+[5.355s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/hook/cmake_prefix_path.dsv'
+[5.356s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/hook/cmake_prefix_path.sh'
+[5.357s] Level 1:colcon.colcon_core.environment:checking '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/lib'
+[5.357s] Level 1:colcon.colcon_core.shell:create_environment_hook('custom_msgs', 'ld_library_path_lib')
+[5.370s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/hook/ld_library_path_lib.ps1'
+[5.371s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/hook/ld_library_path_lib.dsv'
+[5.372s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/hook/ld_library_path_lib.sh'
+[5.372s] Level 1:colcon.colcon_core.environment:checking '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/bin'
+[5.373s] Level 1:colcon.colcon_core.environment:checking '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/lib/pkgconfig/custom_msgs.pc'
+[5.373s] Level 1:colcon.colcon_core.environment:checking '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/lib/python3.8/site-packages'
+[5.373s] Level 1:colcon.colcon_core.shell:create_environment_hook('custom_msgs', 'pythonpath')
+[5.386s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/hook/pythonpath.ps1'
+[5.387s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/hook/pythonpath.dsv'
+[5.388s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/hook/pythonpath.sh'
+[5.389s] Level 1:colcon.colcon_core.environment:checking '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/bin'
+[5.402s] INFO:colcon.colcon_core.shell:Creating package script '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/package.ps1'
+[5.403s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/package.dsv'
+[5.404s] INFO:colcon.colcon_core.shell:Creating package script '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/package.sh'
+[5.405s] INFO:colcon.colcon_core.shell:Creating package script '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/package.bash'
+[5.405s] INFO:colcon.colcon_core.shell:Creating package script '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/custom_msgs/package.zsh'
+[5.406s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/custom_msgs/share/colcon-core/packages/custom_msgs)
+[5.406s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[5.407s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[5.407s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[5.407s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[5.426s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[5.426s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[5.426s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[5.426s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[5.427s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.NotSupported: Unable to autolaunch a dbus-daemon without a $DISPLAY for X11
+[5.427s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[5.440s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/local_setup.ps1'
+[5.441s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/_local_setup_util_ps1.py'
+[5.442s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/setup.ps1'
+[5.457s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/local_setup.sh'
+[5.458s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/_local_setup_util_sh.py'
+[5.458s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/setup.sh'
+[5.473s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/local_setup.bash'
+[5.474s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/setup.bash'
+[5.488s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/local_setup.zsh'
+[5.489s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/racecar/racecar_ws/src/lab1c/custom_msgs/install/setup.zsh'

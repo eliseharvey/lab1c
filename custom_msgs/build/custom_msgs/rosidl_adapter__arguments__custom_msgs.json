@@ -1,0 +1,6 @@
+{
+  "package_name": "custom_msgs",
+  "non_idl_tuples": [
+    "/home/racecar/racecar_ws/src/lab1c/custom_msgs:msg/OpenSpace.msg"
+  ]
+}
