@@ -10,39 +10,45 @@ class FakeScanPublisher(Node):
 
     def __init__(self):
         super().__init__('fake_scan_publisher')
-        self.publisher_ = self.create_publisher(LaserScan, 'fake_scan', 10) # type, topic, queue
-        timer_period = 0.05  # Seconds; Hz = cycles per second, 20 Hz = 0.05 cycles per seconds
+        # ROS parameters - with defaults set
+        self.declare_parameters( 
+            namespace='',
+            parameters = [
+                ('publish_topic', 'fake_scan'), 
+                ('publish_rate', 0.05), # Seconds; Hz = cycles per second, 20 Hz = 0.05 cycles per seconds
+                ('angle_min', -(2/3)*math.pi),
+                ('angle_max', (2/3)*math.pi),
+                ('range_min', 1.0),
+                ('range_max', 10.0),
+                ('angle_increment', (1/300)*math.pi),
+            ]
+        )
+        # get ROS parameters
+        publish_topic, publish_rate = self.get_parameters(
+            ['publish_topic', 'publish_rate']
+        )
+        # set up
+        self.publisher_ = self.create_publisher(LaserScan, publish_topic.value, 10) # type, topic, queue
+        timer_period = publish_rate.value  
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
     def timer_callback(self):
-        """
-        Details for LaserScan message:
-            Timestamp: Current ros time
-            Frame_id: “base_link”
-            Angle_min: (-2/3)pi
-            Angle_max: (2/3)pi
-            Angle_increment: (1/300)pi
-            Time_increment: Leave it unset if you wish
-            Scan_time: The time difference in seconds between consecutive scans.
-
-            Range_min: 1.0
-            Range_max: 10.0
-            Ranges: One dimensional array with elements of random floats between range_min and range_max, Use angle_min, angle_max, and angle_increment to determine the length. Be careful of an off-by-1 error! There should be an element at angle_min and angle_max.
-            Intensities: Leave it unset if you wish
-        """
-        msg = LaserScan()
-        msg.header.stamp = self.get_clock().now().to_msg()
-        msg.header.frame_id = 'base_link'
-        msg.angle_min = -(2/3)*math.pi
-        msg.angle_max = (2/3)*math.pi
-        msg.angle_increment = (1/300)*math.pi
+        angle_min, angle_max, range_min, range_max, angle_increment = self.get_parameters(
+            ['angle_min', 'angle_max', 'range_min', 'range_max', 'angle_increment']
+        )
+        msg = LaserScan() 
+        msg.header.stamp = self.get_clock().now().to_msg() # not included in ROS parameter update
+        msg.header.frame_id = 'base_link'                  # not included in ROS parameter update
+        msg.angle_min = angle_min.value
+        msg.angle_max = angle_max.value
+        msg.angle_increment = angle_increment.value
         # msg.time_increment = can leave unset
-        msg.scan_time = 0.1 
-        msg.range_min = 1.0
-        msg.range_max = 10.0
+        msg.scan_time = 0.1                                # not included in ROS parameter update
+        msg.range_min = range_min.value
+        msg.range_max = range_max.value
         ranges = []
         for i in range(int(((msg.angle_max - msg.angle_min) / msg.angle_increment) + 1)):
-            ranges.append(random.uniform(1.0, 10.0))
+            ranges.append(random.uniform(msg.range_min, msg.range_max))
         msg.ranges = ranges
         # msg.intensities = can leave unset
         self.publisher_.publish(msg)
