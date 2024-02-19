@@ -1,7 +1,5 @@
 import rclpy
-# import math
 from rclpy.node import Node
-# from std_msgs.msg import Float32
 from sensor_msgs.msg import LaserScan
 from custom_msgs.msg import OpenSpace
 
@@ -28,14 +26,6 @@ class ComplexSubscriber(Node):
         open_space_msg.distance = longest_distance
         open_space_msg.angle = longest_distance_angle
         self.open_space_publisher_.publish(open_space_msg)
-        # # distance message
-        # distance_msg = Float32()
-        # distance_msg.data = longest_distance
-        # self.distance_publisher_.publish(distance_msg)
-        # # angle message
-        # angle_msg = Float32()
-        # angle_msg.data = longest_distance_angle
-        # self.distance_publisher_.publish(angle_msg)
 
 
 def main(args=None):

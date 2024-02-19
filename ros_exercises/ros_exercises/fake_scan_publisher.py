@@ -13,7 +13,6 @@ class FakeScanPublisher(Node):
         self.publisher_ = self.create_publisher(LaserScan, 'fake_scan', 10) # type, topic, queue
         timer_period = 0.05  # Seconds; Hz = cycles per second, 20 Hz = 0.05 cycles per seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
-        self.i = 0
 
     def timer_callback(self):
         """
@@ -38,7 +37,7 @@ class FakeScanPublisher(Node):
         msg.angle_max = (2/3)*math.pi
         msg.angle_increment = (1/300)*math.pi
         # msg.time_increment = can leave unset
-        msg.scan_time = 0.1 #how do we decide this? does it matter?
+        msg.scan_time = 0.1 
         msg.range_min = 1.0
         msg.range_max = 10.0
         ranges = []
@@ -52,14 +51,8 @@ class FakeScanPublisher(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-
     fake_scan_publisher = FakeScanPublisher()
-
     rclpy.spin(fake_scan_publisher)
-
-    # Destroy the node explicitly
-    # (optional - otherwise it will be done automatically
-    # when the garbage collector destroys the node object)
     fake_scan_publisher.destroy_node()
     rclpy.shutdown()
 
