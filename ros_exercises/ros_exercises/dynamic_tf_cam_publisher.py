@@ -119,26 +119,26 @@ class DynamicTfCamPublisher(Node):
         ############################# Example from lecture/lab #############################
 
         ## left camera (Z forward, X right, Y down)
-        left_to_robot_translation = [-0.05, 0, 0] # -0.05 (left) relative to base_line_gt pose
-        left_to_robot_translation = np.array(left_to_robot_translation).T
-        left_to_robot = np.eye(4)
-        left_to_robot[:3, -1] = left_to_robot_translation[:3]
+        left_cam_to_robot_translation = [-0.05, 0, 0] # -0.05 (left) relative to base_line_gt pose
+        left_cam_to_robot_translation = np.array(left_cam_to_robot_translation).T
+        left_cam_to_robot = np.eye(4)
+        left_cam_to_robot[:3, -1] = left_cam_to_robot_translation[:3]
 
         ## right camera
-        right_to_left_translation = [0.1, 0, 0] # 0.1 (right) relative to left pose
-        right_to_left_translation = np.array(right_to_left_translation).T
-        right_to_left = np.eye(4)
-        right_to_left[:3, -1] = right_to_left_translation[:3]
+        right_cam_to_left_translation = [0.1, 0, 0] # 0.1 (right) relative to left pose
+        right_cam_to_left_translation = np.array(right_cam_to_left_translation).T
+        right_cam_to_left = np.eye(4)
+        right_cam_to_left[:3, -1] = right_cam_to_left_translation[:3]
 
         ## left to world
-        left_to_world: np.ndarray = robot_to_world @ left_to_robot
-        tf_left_to_world = self.se3_to_tf(left_to_world, now, parent='world', child='left')
-        self.br.sendTransform([tf_robot_to_world, tf_left_to_world])
+        left_cam_to_world: np.ndarray = robot_to_world @ left_cam_to_robot
+        tf_left_cam_to_world = self.se3_to_tf(left_cam_to_world, now, parent='base_link_gt', child='left_cam')
+        self.br.sendTransform([tf_robot_to_world, tf_left_cam_to_world])
 
         ## right to left
-        right_to_left: np.ndarray = right_to_left
-        tf_right_to_left = self.se3_to_tf(right_to_left, now, parent='left', child='right')
-        self.br.sendTransform([tf_left_to_world, tf_right_to_left])        
+        right_cam_to_left: np.ndarray = right_cam_to_left
+        tf_right_cam_to_left = self.se3_to_tf(right_cam_to_left, now, parent='left_cam', child='right_cam')
+        self.br.sendTransform([tf_left_cam_to_world, tf_right_cam_to_left])        
 
         ## log
         self.get_logger().info('Published')
