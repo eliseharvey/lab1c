@@ -132,7 +132,7 @@ class DynamicTfCamPublisher(Node):
 
         ## left to world
         left_cam_to_world: np.ndarray = robot_to_world @ left_cam_to_robot
-        tf_left_cam_to_world = self.se3_to_tf(left_cam_to_world, now, parent='base_link_gt', child='left_cam')
+        tf_left_cam_to_world = self.se3_to_tf(left_cam_to_world, now, parent='world', child='left_cam')
         self.br.sendTransform([tf_robot_to_world, tf_left_cam_to_world])
 
         ## right to left
