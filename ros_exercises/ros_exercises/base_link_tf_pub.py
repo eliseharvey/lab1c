@@ -84,20 +84,17 @@ class BaseLinkTfPub(Node):
         except tf2_ros.TransformException:
             self.get_logger().info('No transform from left_cam to world found')
             return
-
         left_cam_to_world: np.ndarray = self.tf_to_se3(tf_left_cam_to_world.transform)
         now = self.get_clock().now()
-
-        ## compute
+        ## compute world to baselink (note: baselink is the robot!) by (LC to world)^-1 * (LC to robot)
         robot_to_left_cam_translation = np.array([0.05, 0, 0]).T # -1*-0.05
         robot_to_left_cam = np.eye(4)
         robot_to_left_cam[:3, -1] = robot_to_left_cam_translation[:3]
-
+        ## compute world to robot (what we are broadcasting)
         world_to_robot = np.linalg.inv(left_cam_to_world) @ robot_to_left_cam
-
-        tf_world_to_baselink = self.se3_to_tf(world_to_robot, now, parent='world', child='base_link_gt_2')
-        self.br.sendTransform([tf_world_to_baselink])  
-
+        ## broadcasst
+        tf_world_to_robot = self.se3_to_tf(world_to_robot, now, parent='world', child='base_link_gt_2')
+        self.br.sendTransform([tf_world_to_robot])  
         ## log
         self.get_logger().info('Published')
 
