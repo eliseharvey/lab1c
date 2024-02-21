@@ -4,6 +4,7 @@ import math
 from rclpy.node import Node
 
 from sensor_msgs.msg import LaserScan
+from std_msgs.msg import Float32
 
 
 class FakeScanPublisher(Node):
@@ -29,6 +30,7 @@ class FakeScanPublisher(Node):
         )
         # set up
         self.publisher_ = self.create_publisher(LaserScan, publish_topic.value, 10) # type, topic, queue
+        self.test_publisher_ = self.create_publisher(Float32, "range_test", 10)
         timer_period = publish_rate.value  
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
@@ -52,6 +54,7 @@ class FakeScanPublisher(Node):
         msg.ranges = ranges
         # msg.intensities = can leave unset
         self.publisher_.publish(msg)
+        self.test_publisher_(float(len(msg.ranges)))
         self.get_logger().info('Publishing Fake Laser Scan')
 
 
