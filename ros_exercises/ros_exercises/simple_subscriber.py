@@ -23,15 +23,19 @@ class SimpleSubscriber(Node):
 
     def __init__(self):
         super().__init__('simple_subscriber')
+        self.publisher_ = self.create_publisher(Float32, 'random_float_log', 10) # type, topic, queue
         self.subscription = self.create_subscription(
             Float32,
             'my_random_float',
             self.listener_callback,
             10)
         self.subscription  # prevent unused variable warning
-
+        
     def listener_callback(self, msg):
-        self.get_logger().info('I heard: "%s"' % math.log(msg.data))
+        new_msg = Float32()
+        new_msg.data = math.log(msg.data)
+        self.publisher_.publish(new_msg)
+        self.get_logger().info('Log of random float received: "%s"' % new_msg.data)
 
 
 def main(args=None):

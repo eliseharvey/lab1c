@@ -54,7 +54,9 @@ class FakeScanPublisher(Node):
         msg.ranges = ranges
         # msg.intensities = can leave unset
         self.publisher_.publish(msg)
-        self.test_publisher_(float(len(msg.ranges)))
+        test_msg = Float32()
+        test_msg.data = float(len(msg.ranges))
+        self.test_publisher_.publish(test_msg)
         self.get_logger().info('Publishing Fake Laser Scan')
 
 

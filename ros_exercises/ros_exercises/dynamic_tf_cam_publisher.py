@@ -119,13 +119,13 @@ class DynamicTfCamPublisher(Node):
         ############################# Example from lecture/lab #############################
 
         ## left camera (Z forward, X right, Y down)
-        left_cam_to_robot_translation = [-0.05, 0, 0] # -0.05 (left) relative to base_line_gt pose
+        left_cam_to_robot_translation = [-0.05, 0.0, 0.0] # -0.05 (left) relative to base_line_gt pose
         left_cam_to_robot_translation = np.array(left_cam_to_robot_translation).T
         left_cam_to_robot = np.eye(4)
         left_cam_to_robot[:3, -1] = left_cam_to_robot_translation[:3]
 
         ## right camera
-        right_cam_to_left_translation = [0.1, 0, 0] # 0.1 (right) relative to left pose
+        right_cam_to_left_translation = [0.1, 0.0, 0.0] # 0.1 (right) relative to left pose
         right_cam_to_left_translation = np.array(right_cam_to_left_translation).T
         right_cam_to_left = np.eye(4)
         right_cam_to_left[:3, -1] = right_cam_to_left_translation[:3]

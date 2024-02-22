@@ -21,13 +21,14 @@ class ComplexSubscriber(Node):
             ['subscriber_topic', 'publisher_topic']
         )
         # set up
+        self.open_space_publisher_ = self.create_publisher(OpenSpace, subscriber_topic.value, 10)
         self.subscription = self.create_subscription(
             LaserScan,
             publisher_topic.value,
             self.listener_callback,
             10)
         self.subscription
-        self.open_space_publisher_ = self.create_publisher(OpenSpace, subscriber_topic.value, 10)
+        
 
 
     def listener_callback(self, msg):
